@@ -1,5 +1,7 @@
 package com.itu.proyectoFinal.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,6 +20,7 @@ import java.util.List;
 @Setter
 @Audited
 @AttributeOverride(name = "id", column = @Column(name = "id_necesidad"))
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Necesidad extends Base implements Serializable {
     
     @Column(name = "definir", length = 500, nullable = false)
