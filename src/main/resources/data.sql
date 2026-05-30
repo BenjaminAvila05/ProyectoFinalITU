@@ -1,3 +1,6 @@
+-- 3) Datos (INSERT) — ordenados y limpiados
+SET FOREIGN_KEY_CHECKS = 0;
+
 INSERT IGNORE INTO universidad (id_universidad, cuna_del_conocimiento, diferentes_carreras, privada, publica)
 VALUES
   (1, 'Universidad Nacional de Colombia', 'Ingeniería, Medicina, Derecho, Artes, Ciencias', 0, 1),
@@ -117,3 +120,12 @@ VALUES (1,1),(2,2),(3,3);
 
 INSERT IGNORE INTO revision_seg (next_val)
 VALUES (1);
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+DELETE r1 FROM recoleccion_de_informacion r1
+INNER JOIN recoleccion_de_informacion r2
+  ON r1.datos_de_los_afectados = r2.datos_de_los_afectados
+  AND r1.datos_de_los_directamente_interezados = r2.datos_de_los_directamente_interezados
+  AND r1.id_interfaz = r2.id_interfaz
+  AND r1.id_recoleccion > r2.id_recoleccion;
