@@ -1,0 +1,13 @@
+package com.itu.proyectoFinal.Controllers;
+
+import com.itu.proyectoFinal.Entities.Necesidad;
+import com.itu.proyectoFinal.Services.NecesidadServiceImpl;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping(path = "api/v1/necesidad")
+public class NecesidadController extends BaseControllerImpl<Necesidad, NecesidadServiceImpl>{
+}
