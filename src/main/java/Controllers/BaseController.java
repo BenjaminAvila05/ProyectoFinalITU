@@ -1,6 +1,6 @@
 package Controllers;
 
-import com.example.Nuestro.primer.API.REST.entities.Base;
+import Entities.Base;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,6 +1,6 @@
 package Services;
 
-import com.example.Nuestro.primer.API.REST.entities.Base;
+import Entities.Base;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

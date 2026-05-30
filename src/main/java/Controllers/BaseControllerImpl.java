@@ -1,7 +1,7 @@
 package Controllers;
 
-import com.example.Nuestro.primer.API.REST.entities.Base;
-import com.example.Nuestro.primer.API.REST.services.BaseServiceImpl;
+import Entities.Base;
+import Services.BaseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package Services;
 
-import com.example.Nuestro.primer.API.REST.entities.Base;
-import com.example.Nuestro.primer.API.REST.repositories.BaseRepository;
+import Entities.Base;
+import Repositories.BaseRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
