@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Consulta de Proyecto</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+<body>
+<div class="container">
+    <!-- Left: Form -->
+    <div class="card" aria-labelledby="form-title">
+        <header class="form-header">
+            <div class="logo">UNCuyo</div>
+            <div class="title">
+                <h1 id="form-title">Consulta de Proyecto Universitario</h1>
+                <p>Seleccioná universidad, alumno y revisá el proyecto y su resultado</p>
+            </div>
+        </header>
+
+        <form id="projectForm" novalidate>
+            <div class="fields">
+                <div class="field">
+                    <label for="universidad">Seleccione la Universidad</label>
+                    <select id="universidad" name="universidad" required>
+                        <option value="">-- Seleccionar --</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="alumno">Seleccione el alumno</label>
+                    <select id="alumno" name="alumno" required>
+                        <option value="">-- Seleccionar --</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label for="proyecto">Proyecto a realizar</label>
+                    <!-- ahora es select poblado por fetch; también puede quedar vacío para ingreso manual -->
+                    <select id="proyecto" name="proyecto">
+                        <option value="">-- Seleccionar o escribir --</option>
+                    </select>
+                    <!-- campo alternativo editable si querés permitir texto libre -->
+                    <input id="proyectoManual" name="proyectoManual" type="text" placeholder="O escribí un proyecto nuevo" />
+                </div>
+
+                <div class="field full">
+                    <label for="resultado">Resultado del proyecto</label>
+                    <textarea id="resultado" name="resultado" placeholder="Resumen del resultado o estado actual"></textarea>
+                </div>
+            </div>
+
+            <div class="actions" role="group" aria-label="Acciones">
+                <button type="button" class="btn btn-primary" id="verDatos">Ver Datos</button>
+                <button type="button" class="btn btn-outline" id="verDocentes">Ver Docentes a Cargo</button>
+                <button type="button" class="btn btn-ghost" id="verProyecto">Ver Proyecto</button>
+            </div>
+
+            <p class="hint">Consejo: completá Universidad y Alumno para obtener resultados más precisos.</p>
+        </form>
+    </div>
+
+    <!-- Right: Summary / resultados -->
+    <aside class="summary">
+        <div class="card info" aria-live="polite">
+            <div class="info">
+                <h3>Resumen rápido</h3>
+                <p class="meta" id="resumenMeta">Seleccioná universidad y alumno para ver información.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 style="margin-top:0">Detalles</h3>
+            <p class="meta"><strong>Universidad:</strong> <span id="outUniversidad">—</span></p>
+            <p class="meta"><strong>Alumno:</strong> <span id="outAlumno">—</span></p>
+            <p class="meta"><strong>Proyecto:</strong> <span id="outProyecto">—</span></p>
+            <p class="meta"><strong>Resultado:</strong> <span id="outResultado">—</span></p>
+        </div>
+    </aside>
+</div>
+
+<!-- Modal para docentes -->
+<div id="modalDocentes" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="modal-content" role="document">
+        <header class="modal-header">
+            <h2 id="modalTitle">Docentes a cargo</h2>
+            <button class="modal-close" id="closeModal" aria-label="Cerrar">&times;</button>
+        </header>
+        <div class="modal-body" id="modalBody">
+            <p class="muted">No hay docentes cargados.</p>
+        </div>
+        <footer class="modal-footer">
+            <button class="btn btn-outline" id="modalCloseBtn">Cerrar</button>
+        </footer>
+    </div>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+</div>
+
+<script src="../static/js/script.js"></script>
+</body>
+</html>
