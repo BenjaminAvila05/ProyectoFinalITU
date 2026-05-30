@@ -17,13 +17,9 @@ import java.util.List;
 @Getter
 @Setter
 @Audited
-public class Estudiante implements Serializable {
+@AttributeOverride(name = "id", column = @Column(name = "id_estudiante"))
+public class Estudiante extends Base implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_estudiante")
-    private int idEstudiante;
-    
     @Column(name = "aspirante_a_grado")
     private int aspiranteAGrado;
     

@@ -18,13 +18,9 @@ import java.util.List;
 @Getter
 @Setter
 @Audited
-public class InterfazIngresoInformacion implements Serializable {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_interfaz")
-    private int idInterfaz;
-    
+@AttributeOverride(name = "id", column = @Column(name = "id_interfaz"))
+public class InterfazIngresoInformacion extends Base implements Serializable {
+
     @Column(name = "comentarios_abiertos_en_linea")
     private String comentariosAbiertosEnLinea;
     

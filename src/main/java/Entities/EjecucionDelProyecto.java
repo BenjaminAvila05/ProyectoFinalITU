@@ -19,12 +19,8 @@ import java.util.List;
 @Getter
 @Setter
 @Audited
-public class EjecucionDelProyecto implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_ejecucion")
-    private int idEjecucion;
+@AttributeOverride(name = "id", column = @Column(name = "id_ejecucion"))
+public class EjecucionDelProyecto extends Base implements Serializable{
     
     @Column(name = "proyectoDeGradoTerminado")
     private String proyectoDeGradoTerminado;
@@ -46,7 +42,7 @@ public class EjecucionDelProyecto implements Serializable {
     @OneToMany(mappedBy = "estaPendiente")
     private List<PersonalDocente> docentes = new ArrayList<>();
     
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_resultado")
     private Resultado resultado;
     

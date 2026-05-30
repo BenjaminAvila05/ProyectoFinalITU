@@ -18,12 +18,8 @@ import java.util.List;
 @Getter
 @Setter
 @Audited
-public class ProyectoDeGrado implements Serializable {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_proyecto")
-    private int idProyecto;
+@AttributeOverride(name = "id", column = @Column(name = "id_proyecto"))
+public class ProyectoDeGrado extends Base implements Serializable {
     
     @Column(name = "alcance", length = 500, nullable = false)
     private String alcance;

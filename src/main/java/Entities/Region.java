@@ -18,13 +18,9 @@ import java.util.List;
 @Getter
 @Setter
 @Audited
-public class Region implements Serializable {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_region")
-    private int idRegion;
-    
+@AttributeOverride(name = "id", column = @Column(name = "id_region"))
+public class Region extends Base implements Serializable {
+
     @Column(name = "aspectos_sociocultural", nullable = false)
     private String aspectosSocioCultural;
     

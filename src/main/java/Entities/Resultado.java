@@ -18,13 +18,9 @@ import java.util.List;
 @Getter
 @Setter
 @Audited
-public class Resultado implements Serializable {
+@AttributeOverride(name = "id", column = @Column(name = "id_resultado"))
+public class Resultado extends Base implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_resultado")
-    private int idResultado;
-    
     @Column(name = "implementacionFinalizada", nullable = false)
     private String implementacionFinalizada;
     

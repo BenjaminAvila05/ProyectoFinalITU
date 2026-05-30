@@ -17,7 +17,8 @@ import java.util.List;
 @Getter
 @Setter
 @Audited
-public class Necesidad implements Serializable {
+@AttributeOverride(name = "id", column = @Column(name = "id_ejecucion"))
+public class Necesidad extends Base implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
