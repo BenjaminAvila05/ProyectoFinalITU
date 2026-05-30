@@ -171,7 +171,7 @@ textarea{min-height:120px; resize:vertical; padding-top:10px}
     .summary{order:2}
 }
 
-/* Resultado: estilo igual que la tarjeta de detalles pero con scroll y monospaced */
+/* Resultado */
 .resultado-card{
     background: var(--card);
     border-radius: var(--radius);
@@ -200,7 +200,7 @@ textarea{min-height:120px; resize:vertical; padding-top:10px}
     font-weight: 700;
 }
 
-/* Estilo para el bloque de resultado: igual visual que "Detalles" */
+/* Estilo para el bloque de resultado*/
 .resultado-card{
     background: var(--card);
     border-radius: var(--radius);
@@ -217,7 +217,7 @@ textarea{min-height:120px; resize:vertical; padding-top:10px}
     white-space: normal;
 }
 
-/* Tipografía y jerarquía como el panel de detalles */
+/* Tipografía y jerarquía */
 .resultado-card .section-title{
     display:block;
     font-weight:700;
