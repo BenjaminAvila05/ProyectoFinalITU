@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/necesidades")
+@RequestMapping(path = "api/v1/necesidad")
 public class NecesidadController extends BaseControllerImpl<Necesidad, NecesidadServiceImpl>{
 }

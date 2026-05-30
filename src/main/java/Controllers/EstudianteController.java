@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/estudiantes")
+@RequestMapping(path = "api/v1/estudiante")
 public class EstudianteController extends BaseControllerImpl<Estudiante, EstudianteServiceImpl>{
 }
